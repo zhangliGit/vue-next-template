@@ -1,9 +1,10 @@
 <template>
   <div class="qui-page qui-fx-ver">
-    <div class="header qui-fx-ac qui-fx-jc">Vue3.0示例</div>
+    <div class="header qui-fx-ac qui-fx-jc">分类列表</div>
     <div class="qui-fx-f1">
-      <div @click="goPath" class="type-list" v-for="data in dataList" :key="data.id">
-        {{ data.title }}
+      <div class="type-list" v-for="data in dataList" :key="data.id">
+        <span>{{ data.title }}</span>
+        <span>{{ data.time }}</span>
       </div>
     </div>
   </div>
@@ -12,10 +13,9 @@
 <script>
 import { reactive } from 'vue'
 export default {
-  name: 'Home',
+  name: 'List',
   components: {},
-  setup(props, ctx) {
-    console.log(props, ctx)
+  setup() {
     const dataList = reactive([
       {
         id: 1,
@@ -34,11 +34,8 @@ export default {
         title: 'webpack'
       }
     ])
-    // methods方法
-    const goPath = () => {}
     return {
-      dataList,
-      goPath
+      dataList
     }
   }
 }
@@ -52,16 +49,8 @@ export default {
   color: #fff;
 }
 .type-list {
-  width: 22.5%;
-  margin-left: 2.25%;
   line-height: 2.2rem;
-  float: left;
   height: 2.2rem;
-  text-align: center;
-  border: 1px #f5f5f5 solid;
-  background-color: #666;
-  border-radius: 4px;
-  margin-top: 10px;
-  color: #fff;
+  border-bottom: 1px #ccc solid;
 }
 </style>

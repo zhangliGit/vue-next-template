@@ -1,9 +1,5 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">列表</router-link> |
-      <router-link to="/about">其他</router-link>
-    </div>
     <router-view />
   </div>
 </template>

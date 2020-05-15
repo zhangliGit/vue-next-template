@@ -3,7 +3,7 @@
     <!-- <p>姓名：{{ item.name || '' }}</p>
     <p>年龄：{{ item.age || '' }}</p>
     <p>性别：{{ item.sex || '' }}</p>
-    <p>手机号：{{ item.phone || '' }}</p> -->
+    <p>手机号：{{ item.phone || '' }}</p>-->
   </div>
 </template>
 
