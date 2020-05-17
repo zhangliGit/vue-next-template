@@ -2,6 +2,7 @@
   <div class="qui-page qui-fx-ver">
     <div class="header qui-fx-ac qui-fx-jc">Vue3.0示例</div>
     <div class="qui-fx-f1">
+      <tip :msg="msg"></tip>
       <div @click="goPath" class="type-list" v-for="data in dataList" :key="data.id">
         {{ data.title }}
       </div>
@@ -10,12 +11,14 @@
 </template>
 
 <script>
-import { reactive } from 'vue'
+import { ref, reactive, getCurrentInstance } from 'vue'
+import Tip from './Tip.vue'
 export default {
   name: 'Home',
-  components: {},
-  setup(props, ctx) {
-    console.log(props, ctx)
+  components: {Tip},
+  setup() {
+    const { ctx } = getCurrentInstance() 
+    const msg = ref('我是组件')
     const dataList = reactive([
       {
         id: 1,
@@ -35,15 +38,18 @@ export default {
       }
     ])
     // methods方法
-    const goPath = () => {}
+    const goPath = () => {
+      ctx.$router.push('/list')
+    }
     return {
       dataList,
-      goPath
+      goPath,
+      msg
     }
   }
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .header {
   height: 2.2rem;
   font-size: 16px;
