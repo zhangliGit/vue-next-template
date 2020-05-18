@@ -1,9 +1,9 @@
 <template>
   <div class="qui-page qui-fx-ver">
-    <div class="header qui-fx-ac qui-fx-jc">Vue3.0示例</div>
+    <div class="header qui-fx-ac qui-fx-jc">Vue3.0Demo</div>
     <div class="qui-fx-f1">
       <tip :msg="msg"></tip>
-      <div @click="goPath" class="type-list" v-for="data in dataList" :key="data.id">
+      <div @click="goPath(data)" class="type-list" v-for="data in dataList" :key="data.id">
         {{ data.title }}
       </div>
     </div>
@@ -15,10 +15,11 @@ import { ref, reactive, getCurrentInstance } from 'vue'
 import Tip from './Tip.vue'
 export default {
   name: 'Home',
-  components: {Tip},
+  components: { Tip },
   setup() {
-    const { ctx } = getCurrentInstance() 
-    const msg = ref('我是组件')
+    console.log('home')
+    const { ctx } = getCurrentInstance()
+    const msg = ref('前端开发知识点')
     const dataList = reactive([
       {
         id: 1,
@@ -33,13 +34,26 @@ export default {
         title: 'javascript'
       },
       {
-        id: 4,
+        id: 5,
         title: 'webpack'
+      },
+      {
+        id: 6,
+        title: 'node'
+      },
+      {
+        id: 7,
+        title: 'nginx'
       }
     ])
     // methods方法
-    const goPath = () => {
-      ctx.$router.push('/list')
+    const goPath = data => {
+      ctx.$router.push({
+        path: '/list',
+        query: {
+          title: data.title
+        }
+      })
     }
     return {
       dataList,
@@ -59,7 +73,7 @@ export default {
 }
 .type-list {
   width: 22.5%;
-  margin-left: 2.25%;
+  margin-left: 2%;
   line-height: 2.2rem;
   float: left;
   height: 2.2rem;

@@ -9,10 +9,13 @@ export default {
   props: {
     msg: String
   },
-  setup(props, ctx) {
-      console.log(props, ctx)
-  }
+  setup() {}
 }
 </script>
-<style>
+<style scoped>
+.tip {
+  height: 2rem;
+  padding: 0.4rem;
+  background-color: #ccc;
+}
 </style>
