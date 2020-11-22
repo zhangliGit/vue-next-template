@@ -1,0 +1,9 @@
+root = true             # 表示 .editorconfig 是否生效
+[*]                     # 匹配的文件类型
+#  [*.{js,jsx,ts,tsx,vue}]  表示只对 js.jsx.ts.tsx.vue后缀的文件生效
+charset = utf-8         # 字符集
+end_of_line = lf        #换行符lf
+tab_width = 2           # tab为2个空格
+indent_style = tabs     # 可选 space
+indent_size = 2       # 缩进大小2个空格
+trim_trailing_whitespace = true # 是否删除行尾的空格

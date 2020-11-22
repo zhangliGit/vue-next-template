@@ -1,18 +1,11 @@
 <template>
   <div id="app">
-    <keep-alive>
-      <router-view />
-    </keep-alive>
+    <router-view />
   </div>
 </template>
 
 <script>
-import { KeepAlive } from 'vue'
-export default {
-  components: {
-    KeepAlive
-  }
-}
+export default {}
 </script>
 
 <style>

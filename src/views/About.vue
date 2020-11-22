@@ -21,7 +21,7 @@
         <li>{{ list.sex }}</li>
         <li>{{ list.phone }}</li>
         <li>
-          <span @click="del(list.id)">删除</span>
+        <span @click="del(list.id)">删除</span>
           <span>查看</span>
         </li>
       </ul>
@@ -32,7 +32,7 @@
 
 <script>
 import Detail from '../components/Detial'
-import { ref, reactive, onMounted, provide } from 'vue'
+import { ref, reactive, onMounted, provide} from 'vue'
 export default {
   name: 'Home',
   components: {

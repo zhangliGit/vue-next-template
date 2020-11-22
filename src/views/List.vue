@@ -9,10 +9,7 @@
         <p>标题：<input type="text" v-model="form.title" /></p>
         <p>内容：<input type="text" v-model="form.content" /></p>
       </div>
-      <p
-        @click="add"
-        style="width: 80px; height: 30px; background: #666; border-radius: 4px; text-align: center; line-height: 30px; color:#fff;"
-      >
+      <p @click="add" style="width: 80px; height: 30px; background: #666; border-radius: 4px; text-align: center; line-height: 30px; color:#fff;">
         录入
       </p>
     </div>
@@ -36,6 +33,7 @@ export default {
     const count = ref(0)
     // 获取当前路由实例
     const { ctx } = getCurrentInstance()
+    console.log(getCurrentInstance())
     const title = ctx.$router.currentRoute.value.query.title
     const form = reactive({
       title: '',
